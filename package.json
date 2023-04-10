@@ -1,23 +1,27 @@
 {
+  "name": "typescript-template-project-generator",
+  "version": "1.0.0",
   "dependencies": {
     "@types/node": "^18.15.11",
+    "ejs": "^3.1.9",
+    "inquirer": "^8.2.5",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
   },
+  "bin": {
+    "template-generator": "./dist/index.js"
+  },
   "scripts": {
-    "start": "ts-node src/app.ts",
-    "test": "mocha"
+    "start": "ts-node src/index.ts",
+    "build": "tsc && shx rm -rf dist/templates && shx cp -r src/templates dist"
   },
   "devDependencies": {
-    "@types/sinon": "^10.0.13",
-    "@types/mocha": "^10.0.1",
-    "@types/chai": "^4.3.4",
-    "mocha": "^10.2.0",
-    "chai": "^4.3.7",
-    "prettier": "^2.8.7",
-    "sinon": "^15.0.3",
+    "@types/ejs": "^3.1.2",
+    "@types/inquirer": "^8.2.6",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
-    "eslint": "^8.38.0"
+    "eslint": "^8.38.0",
+    "prettier": "^2.8.7",
+    "shx": "^0.3.4"
   }
 }
